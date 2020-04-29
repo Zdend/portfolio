@@ -6,7 +6,9 @@ export const globalStyles = css`
 
   body {
     font-size: ${REM}px;
-    font-family: 'Nunito Sans',-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,noto sans,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+    font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue,
+      Arial, noto sans, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol,
+      noto color emoji;
   }
 
   h1 {
@@ -49,5 +51,4 @@ export const globalStyles = css`
       }
     `;
   })}
-
 `;

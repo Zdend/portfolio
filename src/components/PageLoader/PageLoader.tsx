@@ -1,14 +1,9 @@
 import React from 'react';
 
-interface PageLoaderProps {
-
-}
+interface PageLoaderProps {}
 
 const PageLoader = ({}: PageLoaderProps) => {
-
-  return (
-    <></>
-  );
+  return <div>Loading...</div>;
 };
 
 export default PageLoader;

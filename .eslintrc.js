@@ -1,3 +1,5 @@
+const { babelPluginModuleResolverConfig } = require('./config');
+
 module.exports = {
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -33,7 +35,7 @@ module.exports = {
         version: 'detect',
       },
       'import/resolver': {
-        'babel-module': {}
+        'babel-module': babelPluginModuleResolverConfig
       }
     },
   }

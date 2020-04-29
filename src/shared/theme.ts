@@ -6,12 +6,11 @@ export const COLORS = {
   ERROR: generate('#F44336'),
   WARNING: generate('#FF9800'),
   INFO: generate('#2196F3'),
-  GREY: generate('#a5adb7'),
+  GREY: generate('#a5adb7')
 };
 
 export const BASE_UNIT = 4;
 export const REM = BASE_UNIT * 4;
-
 
 export enum BREAKPOINT {
   xs = '575px',

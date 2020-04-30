@@ -4,6 +4,10 @@ import { COLORS, REM, BASE_UNIT } from '@/shared/theme';
 export const globalStyles = css`
   @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,800,900&display=swap');
 
+  html, body, #root {
+    height: 100%;
+  }
+
   body {
     font-size: ${REM}px;
     font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue,

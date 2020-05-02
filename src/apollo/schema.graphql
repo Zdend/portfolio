@@ -1,0 +1,80 @@
+scalar Date
+
+enum Level {
+  LOW
+  MODERATE
+  HIGH
+}
+
+enum ResidencyStatus {
+  CITIZEN
+  PERMANENT_RESIDENT
+}
+
+type File {
+  id: ID!
+  filename: String!
+  url: String!
+}
+
+type Contact {
+  id: ID!
+  email: String!
+  phoneNumber: String!
+  location: String
+}
+
+type Skill {
+  id: ID!
+  title: String!
+  image: File!
+  passion: Level
+  expertise: Level
+}
+
+type Experience {
+  id: ID!
+  position: String!
+  companyName: String!
+  from: Date!
+  to: Date
+}
+
+type Project {
+  id: ID!
+  name: String!
+  description: String
+  skills: [Skill!]!
+}
+
+type Profile {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  nickName: String
+  contact: Contact!
+  jobTitle: String!
+  shortDescription: String
+  description: String
+  cv: File
+  linkedInUrl: String
+  githubUrl: String
+  residencyStatus: ResidencyStatus!
+}
+
+
+type Query {
+  profile: Profile!
+  skills: [Skill!]!
+  experience: [Experience!]!
+  projects: [Project!]!
+}
+
+# type Mutation {
+
+# }
+
+schema {
+  query: Query
+  # mutation: Mutation
+}

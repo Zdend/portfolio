@@ -2,16 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { InMemoryCache } from 'apollo-cache-inmemory';
-import { ApolloClient } from 'apollo-client';
 import './styles/tailwind.generated.css';
+import { createClient } from './apollo/client';
 
-const apolloClient = new ApolloClient({
-  cache: new InMemoryCache(),
-  resolvers: {
-    
-  }
-});
+const apolloClient = createClient();
 
 ReactDOM.render(<App client={apolloClient} />, document.getElementById('root'));
 

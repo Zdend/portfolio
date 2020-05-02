@@ -1,0 +1,36 @@
+# https://graphql-code-generator.com/docs/plugins/typescript-react-apollo
+overwrite: true
+schema: 'src/apollo/schema.graphql'
+config:
+  reactApolloVersion: 3
+  withHooks: true
+  namingConvention: 
+    enumValues: keep
+documents: 
+  - 'src/graphql/**/*.gql'
+  - 'src/containers/**/*.gql'
+generates:
+  src/types/graphql.ts:
+    config:
+      scalars:
+        Date: String
+      mappers:
+        Date: any
+      contextType: "@/types/apollo#ResolverContext"
+      customResolveInfo: "@/types/apollo#ResolverInfo"
+    plugins:
+      - typescript
+      - typescript-resolvers
+  src/containers/:
+    preset: near-operation-file
+    presetConfig:
+      extension: .generated.tsx
+      baseTypesPath: ../types/graphql.ts
+    plugins:
+      - typescript-operations
+      - typescript-react-apollo
+  src/apollo/schema.json:
+    plugins:
+      - introspection
+    config:
+      minify: false
